@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import javax.sql.rowset.BaseRowSet;
 
 public class LoginStepDefs {
 
@@ -19,6 +18,7 @@ public class LoginStepDefs {
     public void the_user_is_on_the_login_page(){
         String url= ConfigurationReader.get("url");
         Driver.get().get(url);
+
     }
 
     @When("the user enters the driver information")
@@ -67,6 +67,7 @@ public class LoginStepDefs {
 
     @When("the user navigates to {string} {string}")
     public void the_user_navigates_to(String tab, String module) {
+        BrowserUtils.waitFor(3);
         new DashboardPage().navigateToModule(tab,module);
     }
 

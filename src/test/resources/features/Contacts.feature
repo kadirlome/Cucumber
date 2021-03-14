@@ -1,3 +1,4 @@
+@TTcase1
 Feature: Contacts page
 
   Scenario: Default page number
